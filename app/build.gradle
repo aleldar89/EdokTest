@@ -1,0 +1,78 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'dagger.hilt.android.plugin'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.example.edoktest'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "ru.netology.edoktest"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation project(path: ':feature-category')
+    implementation project(path: ':feature-order')
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "androidx.core:core-ktx:$rootProject.ext.core"
+    implementation "androidx.appcompat:appcompat:$rootProject.ext.appcompat"
+    implementation "com.google.android.material:material:$rootProject.ext.mdc"
+    implementation "androidx.activity:activity-ktx:$rootProject.ext.activity"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.ext.lifecycle"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.ext.lifecycle"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$rootProject.ext.lifecycle"
+    implementation "androidx.navigation:navigation-fragment-ktx:$rootProject.ext.navigation"
+    implementation "androidx.navigation:navigation-ui-ktx:$rootProject.ext.navigation"
+    implementation "androidx.room:room-runtime:$rootProject.ext.room"
+    kapt "androidx.room:room-compiler:$rootProject.ext.room"
+    implementation "androidx.room:room-ktx:$rootProject.ext.room"
+    implementation "androidx.room:room-paging:$rootProject.ext.room"
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofit"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.ext.coroutines"
+    implementation "com.google.android.gms:play-services-base:$rootProject.ext.play_services_base"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$rootProject.ext.coroutines"
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glide"
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:$rootProject.ext.desugar"
+    implementation "com.google.code.gson:gson:$rootProject.ext.gson"
+    testImplementation "junit:junit:$rootProject.ext.junit"
+    androidTestImplementation "androidx.test.ext:junit:$rootProject.ext.ext_junit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.ext.espresso_core"
+}
