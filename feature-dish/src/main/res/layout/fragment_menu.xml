@@ -32,8 +32,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/back"
         app:layout_constraintEnd_toStartOf="@id/avatar"
         app:layout_constraintStart_toEndOf="@+id/back"
-        app:layout_constraintTop_toTopOf="@+id/back"
-        tools:text="@sample/samples.json/data/category" />
+        app:layout_constraintTop_toTopOf="@+id/back" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/tag_list"
@@ -65,5 +64,4 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.93" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

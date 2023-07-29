@@ -44,10 +44,11 @@ android {
     }
 }
 
+//FIXME переработать gradle проекта по образцу https://github.com/SevaZhukov/smmn/blob/master/feature/main/build.gradle
 dependencies {
     implementation project(path: ':feature-category')
-    implementation project(path: ':feature-order')
-
+    implementation project(path: ':feature-dish')
+    implementation project(path: ':navigation')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "androidx.core:core-ktx:$rootProject.ext.core"
     implementation "androidx.appcompat:appcompat:$rootProject.ext.appcompat"
@@ -72,7 +73,5 @@ dependencies {
     implementation "com.github.bumptech.glide:glide:$rootProject.ext.glide"
     coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:$rootProject.ext.desugar"
     implementation "com.google.code.gson:gson:$rootProject.ext.gson"
-    testImplementation "junit:junit:$rootProject.ext.junit"
-    androidTestImplementation "androidx.test.ext:junit:$rootProject.ext.ext_junit"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.ext.espresso_core"
+    implementation "com.google.android.gms:play-services-location:$rootProject.ext.play_services_location"
 }

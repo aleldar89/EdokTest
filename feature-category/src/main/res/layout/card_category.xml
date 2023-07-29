@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -17,8 +16,7 @@
             android:adjustViewBounds="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@sample/samples.json/data/sampleDish" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/name"
@@ -28,9 +26,6 @@
             android:textColor="@color/black"
             android:textSize="@dimen/text_size"
             app:layout_constraintStart_toStartOf="@id/image"
-            app:layout_constraintTop_toTopOf="@id/image"
-            tools:text="@sample/samples.json/data/category" />
-
+            app:layout_constraintTop_toTopOf="@id/image" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </com.google.android.material.card.MaterialCardView>

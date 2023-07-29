@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/fragment_dish_shape"
@@ -15,8 +14,7 @@
         android:adjustViewBounds="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@sample/samples.json/data/sampleDish" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/close"
@@ -36,10 +34,7 @@
         android:checkable="true"
         app:icon="@drawable/ic_favorite_24"
         app:layout_constraintEnd_toStartOf="@id/close"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:checked="@sample/samples.json/data/checked" />
-
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/name"
@@ -48,8 +43,7 @@
         android:textColor="@color/black"
         android:textSize="@dimen/text_size"
         app:layout_constraintStart_toStartOf="@id/image"
-        app:layout_constraintTop_toBottomOf="@id/image"
-        tools:text="@sample/samples.json/data/foodName" />
+        app:layout_constraintTop_toBottomOf="@id/image" />
 
     <TextView
         android:id="@+id/price"
@@ -59,8 +53,7 @@
         android:singleLine="true"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@id/image"
-        app:layout_constraintTop_toBottomOf="@id/name"
-        tools:text="@sample/samples.json/data/price" />
+        app:layout_constraintTop_toBottomOf="@id/name" />
 
     <TextView
         android:id="@+id/weight"
@@ -70,8 +63,7 @@
         android:textColor="@color/grey"
         android:textSize="@dimen/little_text_size"
         app:layout_constraintStart_toEndOf="@id/price"
-        app:layout_constraintTop_toBottomOf="@id/name"
-        tools:text="@sample/samples.json/data/weight" />
+        app:layout_constraintTop_toBottomOf="@id/name" />
 
     <TextView
         android:id="@+id/description"
@@ -80,8 +72,7 @@
         android:textColor="@color/grey"
         android:textSize="@dimen/little_text_size"
         app:layout_constraintStart_toStartOf="@id/image"
-        app:layout_constraintTop_toBottomOf="@id/price"
-        tools:text="@sample/samples.json/data/description" />
+        app:layout_constraintTop_toBottomOf="@id/price" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/add"
@@ -93,7 +84,5 @@
         app:layout_constraintEnd_toEndOf="@id/image"
         app:layout_constraintStart_toStartOf="@id/image"
         app:layout_constraintTop_toBottomOf="@id/description"
-        tools:checked="@sample/samples.json/data/checked"
         android:text="@string/add" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

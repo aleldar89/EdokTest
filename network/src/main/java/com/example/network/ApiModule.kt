@@ -1,7 +1,5 @@
 package com.example.network
 
-import androidx.viewbinding.BuildConfig
-import com.example.network.BuildConfig.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,17 +13,15 @@ import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 @Module
-class ApiModule {
+object ApiModule {
 
-//    private val url = BuildConfig.BASE_URL
-    private val url = "https://run.mocky.io/v3/"
+    //FIXME BuildConfig.BASE_URL
+    private const val url = "https://run.mocky.io/v3/"
 
     @Singleton
     @Provides
     fun provideLogging(): HttpLoggingInterceptor = HttpLoggingInterceptor().apply {
-        if (BuildConfig.DEBUG) {
             level = HttpLoggingInterceptor.Level.BASIC
-        }
     }
 
     @Singleton
@@ -46,8 +42,8 @@ class ApiModule {
         .client(okHttpClient)
         .build()
 
-    @Singleton
-    @Provides
-    fun provideApiService(retrofit: Retrofit): ApiService = retrofit.create()
-
+    //FIXME не инжектится наследник интерфейса в имплементации репозиториев
+//    @Singleton
+//    @Provides
+//    fun provideApiService(retrofit: Retrofit): BaseApiService = retrofit.create()
 }

@@ -1,8 +1,10 @@
 rootProject.name = "EdokTest"
 include ':app'
-include ':database'
-include ':network'
 include ':core'
 include ':feature-category'
 include ':feature-dish'
-include ':feature-order'
+include ':feature-components'
+include ':data-category'
+include ':network'
+include ':data-dish'
+include ':navigation'
