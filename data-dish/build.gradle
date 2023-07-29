@@ -1,0 +1,56 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'dagger.hilt.android.plugin'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.example.data_dish'
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 24
+        targetSdk 33
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation project(path: ':core')
+    implementation project(path: ':network')
+    implementation "androidx.core:core-ktx:$rootProject.ext.core"
+    implementation "androidx.appcompat:appcompat:$rootProject.ext.appcompat"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.ext.lifecycle"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$rootProject.ext.lifecycle"
+    implementation "androidx.room:room-ktx:$rootProject.ext.room"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.ext.coroutines"
+    implementation "com.google.android.gms:play-services-base:$rootProject.ext.play_services_base"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$rootProject.ext.coroutines"
+    implementation "com.google.code.gson:gson:$rootProject.ext.gson"
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofit"
+    implementation("com.google.dagger:hilt-android:$hilt_version")
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+    implementation "androidx.room:room-runtime:$rootProject.ext.room"
+    kapt "androidx.room:room-compiler:$rootProject.ext.room"
+    implementation "androidx.room:room-ktx:$rootProject.ext.room"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttplogging"
+}
