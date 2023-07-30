@@ -8,43 +8,12 @@ plugins {
 
 android {
     namespace 'com.example.edoktest'
-    compileSdk 33
-
-    defaultConfig {
-        applicationId "ru.netology.edoktest"
-        minSdk 24
-        targetSdk 33
-        versionCode 1
-        versionName "1.0"
-        multiDexEnabled true
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-
-    compileOptions {
-        coreLibraryDesugaringEnabled true
-
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
 
     buildFeatures {
         viewBinding true
     }
 }
 
-//FIXME переработать gradle проекта по образцу https://github.com/SevaZhukov/smmn/blob/master/feature/main/build.gradle
 dependencies {
     implementation project(path: ':feature-category')
     implementation project(path: ':feature-dish')
@@ -62,7 +31,6 @@ dependencies {
     implementation "androidx.room:room-runtime:$rootProject.ext.room"
     kapt "androidx.room:room-compiler:$rootProject.ext.room"
     implementation "androidx.room:room-ktx:$rootProject.ext.room"
-    implementation "androidx.room:room-paging:$rootProject.ext.room"
     implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofit"
     implementation "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofit"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.ext.coroutines"
